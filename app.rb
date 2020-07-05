@@ -26,13 +26,11 @@ hh = {:username => 'Введите имя',
 		:phone => 'Введите телефон',
 		:datetime => 'Введите дату'}
 
-hh.each do |key, value|
-	if params[key] == ''
-		@error = hh[key]
-		return erb :visit
-	end
-end
+@error = hh.select {|key, | params[key] == ""}.values.join(", ")
 
+if @error != ''
+	return erb :visit
+end
 
 	erb "OK. #{@username}, #{@phone}, #{@datetime}, #{@barber}, #{@color}"
 end
