@@ -27,9 +27,9 @@
  <div class="form-group">
     <label>Выберите барбера</label>
     <select name="barber" class="form-control" id="exampleFormControlSelect1">
-        <option>Петя</option>
-        <option>Люда</option>
-        <option>Вася</option>
+        <option <%= @barber == 'Петя' ? 'selected' : '' %>>Петя</option>
+        <option <%= @barber == 'Люда' ? 'selected' : '' %>>Люда</option>
+        <option <%= @barber == 'Вася' ? 'selected' : '' %>>Вася</option>
       </select>
   </div>
 
