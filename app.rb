@@ -64,6 +64,12 @@ post '/visit' do
 		erb "OK. #{@username}, #{@phone}, #{@datetime}, #{@barber}, #{@color}"
 	end
 
+get '/showusers' do
+  	erb "Hello World"
+end
+
 def get_db
-	return SQLite3::Database.new 'shop.db'
+	db = SQLite3::Database.new 'shop.db'
+	db.results_as_hash = true
+	return db 
 end
